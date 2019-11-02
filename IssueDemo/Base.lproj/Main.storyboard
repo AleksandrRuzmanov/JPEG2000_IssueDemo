@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cassini Images View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CassiniImagesViewController" customModule="IssueDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-2t-Bkd">
+                                <rect key="frame" x="10" y="54" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleImageType:" destination="BYZ-38-t0r" eventType="valueChanged" id="EzN-SB-E8J"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JPEG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-4C-vNa">
+                                <rect key="frame" x="69" y="59" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="250" estimatedRowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m0X-tu-x4n">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="250" id="OO4-sa-9Sf" customClass="ImageTableViewCell" customModule="IssueDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OO4-sa-9Sf" id="iQO-vm-Rex">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ci-rD-d4M">
+                                                    <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3ci-rD-d4M" firstAttribute="leading" secondItem="iQO-vm-Rex" secondAttribute="leadingMargin" id="J35-PC-gm6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3ci-rD-d4M" secondAttribute="bottom" id="Ued-Hw-Dbp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3ci-rD-d4M" secondAttribute="trailing" id="dzK-8T-JEh"/>
+                                                <constraint firstItem="3ci-rD-d4M" firstAttribute="top" secondItem="iQO-vm-Rex" secondAttribute="topMargin" id="i8B-3V-ZTm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="embeddedImageView" destination="3ci-rD-d4M" id="EZX-xW-Udy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kar-2t-Bkd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="6me-Ls-9Mj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SF5-4C-vNa" secondAttribute="trailing" constant="10" id="F5Y-td-dqF"/>
+                            <constraint firstItem="SF5-4C-vNa" firstAttribute="centerY" secondItem="Kar-2t-Bkd" secondAttribute="centerY" id="FgX-L0-B5l"/>
+                            <constraint firstItem="Kar-2t-Bkd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KGN-Ov-Cl0"/>
+                            <constraint firstItem="m0X-tu-x4n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="MjM-th-gI9"/>
+                            <constraint firstItem="SF5-4C-vNa" firstAttribute="leading" secondItem="Kar-2t-Bkd" secondAttribute="trailing" constant="10" id="apd-4D-dVn"/>
+                            <constraint firstAttribute="bottom" secondItem="m0X-tu-x4n" secondAttribute="bottom" id="hrI-HC-Dw8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m0X-tu-x4n" secondAttribute="trailing" id="n9E-1T-bF4"/>
+                            <constraint firstItem="m0X-tu-x4n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p4L-va-Nyt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageTypeLabel" destination="SF5-4C-vNa" id="EzF-o2-ILn"/>
+                        <outlet property="imageTypeSwitch" destination="Kar-2t-Bkd" id="ev0-TJ-BfL"/>
+                        <outlet property="tableView" destination="m0X-tu-x4n" id="kd1-Zc-znm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
